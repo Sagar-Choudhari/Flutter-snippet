@@ -1,0 +1,41 @@
+const LinearGradient(
+            colors: [
+              Color(0xff4153cc),
+              Color(0xFF00aeef),
+            ],
+            // begin: Alignment.bottomLeft,
+            // end: Alignment.topRight,
+            // stops: [0.4, 0.7],
+            tileMode: TileMode.repeated,
+),
+
+
+
+
+            Container(
+              width: 200,
+              height: 200,
+              decoration:  BoxDecoration(
+                  gradient: const LinearGradient(
+                      colors: [Color(0xfffbb040), Color(0xffef4136)],
+                      begin: FractionalOffset.centerLeft,
+                      end: FractionalOffset.centerRight,
+                      stops: [0.0, 1.0],
+                      tileMode: TileMode.clamp),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+
+
+
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                      colors: [Color(0xff00aeef), Color(0xff2d388a)],
+                      begin: FractionalOffset.topLeft,
+                      end: FractionalOffset.bottomRight,
+                      stops: [0.0, 1.0],
+                      tileMode: TileMode.mirror),
+                  borderRadius: BorderRadius.circular(40)),
+            ),

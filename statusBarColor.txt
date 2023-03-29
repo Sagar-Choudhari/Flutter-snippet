@@ -1,0 +1,31 @@
+  @override
+  void initState() {
+    super.initState();
+
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, // make status bar transparent
+      statusBarIconBrightness: Brightness.dark, // set icon color to dark
+    ));
+
+  }
+
+
+
+
+return MaterialApp(
+  theme: Theme.of(context).copyWith(
+    appBarTheme: Theme.of(context)
+        .appBarTheme
+        .copyWith(brightness: Brightness.light),
+  ...
+  ),
+
+
+
+return AnnotatedRegion<SystemUiOverlayStyle>(
+  // Use [SystemUiOverlayStyle.light] for white status bar 
+  // or [SystemUiOverlayStyle.dark] for black status bar
+  // https://stackoverflow.com/a/58132007/1321917
+  value: SystemUiOverlayStyle.light,
+  child: Scaffold(...),
+);

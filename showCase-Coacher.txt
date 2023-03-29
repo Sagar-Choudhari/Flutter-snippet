@@ -1,0 +1,103 @@
+
+flutter pub add showcaseview
+
+
+import 'package:showcaseview/showcaseview.dart';
+
+
+Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Table Layout',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ShowCaseWidget(
+        builder: Builder(builder: (context) => const MyHomePage()),
+      ),
+    );
+  }
+
+
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey _first = GlobalKey();
+  final GlobalKey _second = GlobalKey();
+  // final GlobalKey _third = GlobalKey();
+  // final GlobalKey _fourth = GlobalKey();
+  // final GlobalKey _fifth = GlobalKey();
+
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback(
+          (_) => ShowCaseWidget.of(context)
+          .startShowCase([_first, _second]),
+    );
+  }
+
+
+
+Scaffold(
+      key: _scaffoldKey,
+
+
+Showcase(
+          key: _first,
+          title: 'App Title',
+          description: 'This is app title',
+          // targetShapeBorder: const CircleBorder(),
+          // tooltipBackgroundColor: Colors.indigo,
+          descTextStyle: const TextStyle(
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+            fontSize: 16,
+          ), targetPadding: const EdgeInsets.all(10),
+          tooltipPadding: const EdgeInsets.all(8),
+          child: const Text("widget.title"),
+          // contentPadding: const EdgeInsets.all(20),
+        ),
+
+
+Showcase(
+          key: _second,
+          title: 'Icon',
+          description: 'Leading Icon',
+          child: const Icon(
+            Icons.accessible_forward_rounded
+          ),
+        ),
+
+
+
+GlobalKey _one = GlobalKey();
+GlobalKey _two = GlobalKey();
+GlobalKey _three = GlobalKey();
+
+...
+
+Showcase(
+  key: _one,
+  title: 'Menu',
+  description: 'Click here to see menu options',
+  child: Icon(
+    Icons.menu,
+    color: Colors.black45,
+  ),
+),
+
+Showcase.withWidget(
+  key: _three,
+  height: 80,
+  width: 140,
+  targetShapeBorder: CircleBorder(),
+  container: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      ...
+    ],
+  ),
+  child: ...,
+),

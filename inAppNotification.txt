@@ -1,0 +1,56 @@
+flutter pub add flash
+
+import 'package:flash/flash.dart';
+
+
+
+void _showTopFlash() {
+    showFlash(
+      context: context,
+      duration: const Duration(seconds: 2),
+      builder: (context, controller) {
+        return Flash.bar(
+          controller: controller,
+          backgroundGradient: const LinearGradient(
+            colors: [
+            Colors.blue, 
+            Colors.lightBlueAccent,
+            Color(0xff4153cc),
+            Color(0xFF00aeef),
+            ],
+	    // begin: Alignment.bottomLeft,
+            // end: Alignment.topRight,
+            // stops: [0.4, 0.7],
+            tileMode: TileMode.repeated,
+          ), 
+          brightness: Brightness.light,
+          boxShadows: const [BoxShadow(blurRadius: 4)],
+          barrierBlur: 7.0,
+          barrierDismissible: true,
+          position: FlashPosition.top,
+          horizontalDismissDirection: HorizontalDismissDirection.startToEnd,
+          margin: const EdgeInsets.all(8),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          forwardAnimationCurve: Curves.easeOutBack,
+          reverseAnimationCurve: Curves.slowMiddle,
+          child: FlashBar(
+            title: Text(
+              'You are seeing a snackbar!',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            primaryAction: IconButton(
+              icon: const Icon(Icons.ac_unit),
+              onPressed: () => controller.dismiss(),
+            ),
+            icon: const Icon(
+              Icons.info,
+              color: Colors.black,
+            ),
+            shouldIconPulse: false,
+            showProgressIndicator: true,
+            content: const Text("sagar"),
+          ),
+        );
+      },
+    );
+  }

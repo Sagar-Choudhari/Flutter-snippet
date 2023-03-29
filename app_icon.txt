@@ -1,0 +1,14 @@
+flutter pub add flutter_launcher_icons
+
+__flutter_launcher_icons: ^0.12.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "asset/icons/pet.png"
+
+
+flutter pub get
+
+
+flutter pub run flutter_launcher_icons:main

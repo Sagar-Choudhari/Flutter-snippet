@@ -1,0 +1,23 @@
+
+//## SnackBar
+var snackBar = const SnackBar(content: Text('Hello, I am here'));
+ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+
+//## Toast
+
+flutter pub add fluttertoast
+
+
+import 'package:fluttertoast/fluttertoast.dart';
+
+
+Fluttertoast.showToast(
+              msg: "This is Center Short Toast",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.SNACKBAR,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.grey,
+              textColor: Colors.white,
+              fontSize: 16.0
+);

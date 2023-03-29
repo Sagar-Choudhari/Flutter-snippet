@@ -1,0 +1,12 @@
+      appBar: AppBar(
+        title: const Text("widget.title"),
+        centerTitle: true,
+        leading: const Icon(Icons.accessible_forward_rounded),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: <Color>[Color(0xff00aeef), Color(0xff2d388a)]),
+          ),
+        ),
+        // backgroundColor: Color.lerp(const Color(0xff00aeef), const Color(0xff2d388a),0.3)
+      ),
