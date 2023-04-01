@@ -1,0 +1,13 @@
+flutter pub add permission_handler
+
+
+
+  void requestPermissions() async{
+    // You can request multiple permissions at once.
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.location, 
+      Permission.storage,
+    ].request();
+    debugPrint(statuses[Permission.location].toString());
+    debugPrint(statuses[Permission.storage].toString());
+  }
